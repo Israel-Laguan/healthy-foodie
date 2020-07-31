@@ -32,7 +32,7 @@ export function Recipe({ selectedRecipe, ...props }) {
       </Breadcrumb>
       {selectedRecipe.id && (
         <Row>
-          <Col md={5}>
+          <Col md={8}>
             <img
               src={selectedRecipe.image}
               alt={selectedRecipe.title}
@@ -55,7 +55,7 @@ export function Recipe({ selectedRecipe, ...props }) {
               }}
             ></div>
           </Col>
-          <Col md={7}>
+          <Col md={4}>
             <h2>{selectedRecipe.title}</h2>
             <h3>Ingredients:</h3>
             <ul className="list-group">
