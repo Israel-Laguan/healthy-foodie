@@ -1,0 +1,22 @@
+version: "3"
+services:
+    frontend:
+        container_name: healthy-foodie
+        build: ./
+        image: israellaguan/healthy-foodie
+        tty: true
+        ports:
+            - "3000:3000"
+        volumes:
+            - .:/usr/src/app
+        command: [ "npm", "start" ]
+    test:
+        container_name: healthy-foodie-test
+        build: ./
+        image: israellaguan/healthy-foodie
+        tty: true    
+        environment:
+            - CI=true
+        volumes:
+            - .:/usr/src/app
+        command: [ "npm", "test" ]

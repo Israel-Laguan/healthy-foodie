@@ -19,8 +19,10 @@
   - [The Project](#the-project)
     - [Features](#features)
     - [Built With](#built-with)
+  - [Using the App](#using-the-app)
   - [How to run this project](#how-to-run-this-project)
     - [Prerequisites](#prerequisites)
+    - [Run it (Quickstart with docker)](#run-it-quickstart-with-docker)
     - [Installing the project](#installing-the-project)
     - [Available Scripts](#available-scripts)
       - [`npm start`](#npm-start)
@@ -41,6 +43,11 @@ As part of Microverse Students, I have to complete some capstone projects, solo 
 This project is based in a catalogue of dogs [Catalogue of Dog Clothes](https://www.notion.so/Catalogue-of-Dog-Clothes-8bf1512b8ab34fa28848beb8ab698a32). As stated on the description I changed the subject (also I did not found any API on dog clothes :sad: ). I decided to make a catalogue of recipes. It would be useful and flashy; who doesn't loves to see pics of food!
 
 ### Features
+
+![javascript][]
+![react][]
+[![Framework][badge-framework]][framework-url]
+![bootstrap][]
 
 - Basic `create-react-app` structure
 - Sets `stylelint` on the repo
@@ -63,16 +70,58 @@ This project is based in a catalogue of dogs [Catalogue of Dog Clothes](https://
 - Linux/GNU
 - Love and Passion for code
 
-## How to run this project
+## Using the App
 
-We used `create-react-app` to initialize this project, so it is configurated to be easy to run. Just follow these instructions.
+- Open it and check some pre loaded recipes!
+
+![home](docs/home.png)
+
+- Press a filter button to get recipes acording to the filter pressed
+
+![filters](docs/filters.png)
+
+- Search in the navbar for your favorite recipe!
+
+- Press any card from the list and see details like ingredients, nutricional info, and a link to the recipe:
+
+![details](docs/details.png)
+
+## How to run this project
 
 ### Prerequisites
 
 - `npm` 6.13 +
 - `node` 11.15 +
+- `docker` and `docker-compose` (optional)
 - A Text Editor like VSCode
 - A browser like Firefox or Chrome
+
+### Run it (Quickstart with docker)
+
+- Be sure to setup `docker-compose` and have `git` and `npm` working.
+- Run this:
+
+```sh
+> git clone https://github.com/Israel-Laguan/healthy-foodie.git
+> cd healthy-foodie
+> npm i
+> docker-compose build
+> docker-compose up frontend
+```
+
+- Enter [localhost:3000][] in a browser for the frontend.
+
+![docker-build](docs/docker-build.gif)
+
+![docker-up](docs/docker-up.gif)
+
+You can also test using docker, run `docker-compose up test` or `docker-compose run --rm test`
+
+![docker-test](docs/docker-test.gif)
+
+Not a fan of Docker or need more information? Continue for instructions to learn more about how to setup your PC for run the frontend!
+
+We used `create-react-app` to initialize this project, so it is configurated to be easy to run. Just follow the following instructions.
 
 ### Installing the project
 
@@ -85,6 +134,8 @@ npm i && npm start
 ```
 
 Then open [http://localhost:3000/](http://localhost:3000/) to see the app.
+
+![app](docs/app.gif)
 
 ### Available Scripts
 
@@ -143,6 +194,7 @@ Feel free to check the [issues page][issues-url].
 
 - Icons from [![Icons8][icons8-logo]][Icons8] Icons8
 - Banner from [canva.com](https://www.canva.com)
+- Favicon from [favicon.io](https://favicon.io/emoji-favicons/)
 
 ## License
 
@@ -165,6 +217,7 @@ Feel free to fork this project and improve it
 [react]: https://img.shields.io/badge/React-16+-61DAFB?style=for-the-badge&logo=react
 [javascript]: https://img.shields.io/badge/JAVASCRIPT-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript
 [css]: https://img.shields.io/badge/style-CSS-1572B6?style=for-the-badge&logo=css3
+[bootstrap]: https://img.shields.io/badge/style-Bootstrap4-563D7C?style=for-the-badge&logo=bootstrap
 [contributions-welcome]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=for-the-badge
 [issues-url]: https://github.com/Israel-Laguan/healthy-foodie/issues
 [badge-apache]: https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge
