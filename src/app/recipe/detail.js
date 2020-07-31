@@ -1,12 +1,14 @@
 import React, { useEffect, useCallback } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { Row, Col, Badge } from "reactstrap";
-
-const styleLinkTo = {
-  color: `#007bff`,
-  cursor: `pointer`,
-};
+import {
+  Row,
+  Col,
+  Badge,
+  Breadcrumb,
+  BreadcrumbItem,
+  Jumbotron,
+} from "reactstrap";
 
 export function Recipe({ selectedRecipe, ...props }) {
   const toHome = useCallback(() => {
@@ -19,12 +21,18 @@ export function Recipe({ selectedRecipe, ...props }) {
     }
   }, [selectedRecipe, toHome]);
 
+  console.log(selectedRecipe);
   return (
-    <>
-      <h1>Detalles</h1>
+    <Jumbotron>
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <a href="/home">Home</a>
+        </BreadcrumbItem>
+        <BreadcrumbItem active>Details</BreadcrumbItem>
+      </Breadcrumb>
       {selectedRecipe.id && (
         <Row>
-          <Col md={3}>
+          <Col md={5}>
             <img
               src={selectedRecipe.image}
               alt={selectedRecipe.title}
@@ -32,49 +40,49 @@ export function Recipe({ selectedRecipe, ...props }) {
             />
             <Col md={12}>
               {selectedRecipe.dishTypes.map((dishType) => (
-                <Badge
+                <h3
                   key={`detail_card__footer-${selectedRecipe.id}-${dishType}`}
-                  color="success"
-                  pill
                 >
-                  {dishType}
-                </Badge>
+                  <Badge color="success" outline="true">
+                    {dishType}
+                  </Badge>
+                </h3>
               ))}
             </Col>
-          </Col>
-          <Col md={9}>
-            <h2>{selectedRecipe.title}</h2>
-            <p style={styleLinkTo} onClick={() => toHome()}>
-              Regresar
-            </p>
-            <h3>Ingredientes</h3>
-            <ul className="list-group">
-              {selectedRecipe.extendedIngredients.map((ingredient) => (
-                <li
-                  className="list-group-item d-flex justify-content-between align-items-center"
-                  key={`ingredient-${ingredient.name}`}
-                >
-                  {ingredient.name}
-                  <span class="badge badge-primary badge-pill">
-                    {ingredient.amount} {ingredient.unit}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <h3>Resumen</h3>
             <div
               dangerouslySetInnerHTML={{
                 __html: selectedRecipe.summary,
               }}
             ></div>
-            <h3>Link de preparación de la receta</h3>
+          </Col>
+          <Col md={7}>
+            <h2>{selectedRecipe.title}</h2>
+            <h3>Ingredients:</h3>
+            <ul className="list-group">
+              {selectedRecipe.extendedIngredients.map((ingredient, id) => (
+                <li
+                  className="list-group-item d-flex justify-content-between align-items-center"
+                  key={`ingredient-${ingredient.name}-${id}`}
+                >
+                  {ingredient.name}
+                  <span className="badge badge-info badge-pill">
+                    {ingredient.amount} {ingredient.unit}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <h3>Recipe link:</h3>
             <a href={selectedRecipe.spoonacularSourceUrl} target="_black">
-              Abrir página de preparación
+              <img
+                src="https://img.icons8.com/doodle/48/000000/cooking-book.png"
+                alt="recipe icon"
+              />
+              Open recipe from Spoonacular!
             </a>
           </Col>
         </Row>
       )}
-    </>
+    </Jumbotron>
   );
 }
 

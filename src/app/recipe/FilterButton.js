@@ -4,7 +4,7 @@ import { Row, Col, ButtonGroup, Button } from "reactstrap";
 function FilterButton({ items, onClick }) {
   return (
     <Row>
-      <Col md={11}>
+      <Col className="my-2">
         <ButtonGroup className="w-100">
           {items.map((item) => (
             <Button

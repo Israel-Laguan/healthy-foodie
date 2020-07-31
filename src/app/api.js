@@ -49,7 +49,7 @@ API.getSearchRecipe = async recipe => {
 
   const response = await API.getRecipes({
     query: filterButtonValue,
-    limit: 12,
+    limit: 10,
     filter,
   });
 

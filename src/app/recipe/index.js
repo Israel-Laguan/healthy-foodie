@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import initialFieldByFilterButtons from './fieldByFilterButtons';
-import Search from './Search';
-import FilterButton from './FilterButton';
-import ListResult from './ListResult';
-import API from '../config/api';
+import React, { useState, useEffect, useCallback } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import initialFieldByFilterButtons from "./fieldByFilterButtons";
+import Search from "./Search";
+import FilterButton from "./FilterButton";
+import ListResult from "./ListResult";
+import API from "../api";
+import Header from "../../screens/layout/Header";
 import {
   setRecipe,
   setRecipes,
@@ -13,15 +14,12 @@ import {
   setFilterButtonValue,
   setSelectedRecipe,
   getRecipes,
-} from '../../redux/actions';
+} from "../../redux/actions";
 
-export function Recipe({
-  recipe,
-  recipes,
-  searchRecipes,
-  ...props
-}) {
-  const [fieldByFilterButtons, setFieldByFilterButtons] = useState(initialFieldByFilterButtons);
+export function Recipe({ recipe, recipes, searchRecipes, ...props }) {
+  const [fieldByFilterButtons, setFieldByFilterButtons] = useState(
+    initialFieldByFilterButtons
+  );
 
   const getRandomRecipes = useCallback(async () => {
     try {
@@ -34,41 +32,43 @@ export function Recipe({
     }
   }, [props]);
 
-  const onClickFilterButton = text => {
+  const onClickFilterButton = (text) => {
     props.setFilterButtonValue(text);
 
-    setFieldByFilterButtons(fieldByFilterButtons.map(filterButton => {
-      filterButton.actived = (filterButton.text === text);
+    setFieldByFilterButtons(
+      fieldByFilterButtons.map((filterButton) => {
+        filterButton.actived = filterButton.text === text;
 
-      return filterButton;
-    }))
+        return filterButton;
+      })
+    );
 
     onSearchRecipe(text);
     props.setRecipe(``);
-  }
+  };
 
-  const onChange = value => {
+  const onChange = (value) => {
     props.setRecipe(value);
-  }
+  };
 
-  const onSearchRecipe = async value => {
+  const onSearchRecipe = async (value) => {
     try {
       const response = await API.getSearchRecipe(value);
       props.setSearchRecipes(response);
-    } catch(e) {
+    } catch (e) {
       props.setSearchRecipes([]);
     }
-  }
+  };
 
   const onClick = () => {
     onSearchRecipe(recipe);
     props.setRecipe(``);
-  }
+  };
 
-  const onLink = recipeData => {
+  const onLink = (recipeData) => {
     props.setSelectedRecipe(recipeData);
     props.history.push(`details/${recipeData.id}`);
-  }
+  };
 
   useEffect(() => {
     if (recipes.length === 0) {
@@ -78,28 +78,24 @@ export function Recipe({
 
   return (
     <>
-      <Search
-        recipe={recipe}
-        onChange={onChange}
-        onClick={onClick}
+      <Header
+        search={
+          <Search recipe={recipe} onChange={onChange} onClick={onClick} />
+        }
       />
       <FilterButton
         items={fieldByFilterButtons}
         onClick={onClickFilterButton}
       />
       <ListResult
-        items={
-          searchRecipes.length === 0
-          ? recipes
-          : searchRecipes
-        }
+        items={searchRecipes.length === 0 ? recipes : searchRecipes}
         onLink={onLink}
       />
     </>
   );
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   recipe: state.recipe,
   recipes: state.recipes,
   searchRecipes: state.searchRecipes,
@@ -114,6 +110,4 @@ const mapDispatchToProps = {
   getRecipes,
 };
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Recipe)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Recipe));
