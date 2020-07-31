@@ -1,6 +1,6 @@
 import { setFilterButtonValue } from '../actions';
 
-const defaultState = ``;
+export const defaultState = ``;
 
 const SET_FILTER_BUTTON_VALUE = setFilterButtonValue().type;
 

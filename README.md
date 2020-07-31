@@ -7,7 +7,6 @@
 [![Issues-closed][issues-closed-shield]][issues-url]
 [![Contributors][contributors-shield]][contributors-url]
 
-
 <!-- PROJECT LOGO -->
 | Healthy Foodie |
 | :---: |
@@ -138,6 +137,10 @@ Feel free to check the [issues page][issues-url].
 
 🤗 Give a ⭐️ if you like this project!
 
+- API: Powered by [Spoonacular's Food API](https://spoonacular.com/food-api)
+  
+  ![spoonacular][api-logo]
+
 - Icons from [![Icons8][icons8-logo]][Icons8] Icons8
 - Banner from [canva.com](https://www.canva.com)
 
@@ -177,3 +180,4 @@ Feel free to fork this project and improve it
 [app-icon]: https://img.icons8.com/doodle/48/000000/cooking-book.png
 [Icons8]: https://icons8.com/
 [icons8-logo]: https://img.icons8.com/fluent/20/000000/icons8-new-logo.png
+[api-logo]: https://spoonacular.com/images/spoonacular-logo-b.svg

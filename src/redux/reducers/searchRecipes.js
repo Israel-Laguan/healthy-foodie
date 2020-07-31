@@ -1,6 +1,6 @@
 import { setSearchRecipes } from '../actions';
 
-const defaultState = [];
+export const defaultState = [];
 
 const SET_SEARCH_RECIPES = setSearchRecipes().type;
 

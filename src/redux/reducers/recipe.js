@@ -1,6 +1,6 @@
 import { setRecipe } from '../actions';
 
-const defaultState = ``;
+export const defaultState = ``;
 
 const SET_RECIPE = setRecipe().type;
 
