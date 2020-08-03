@@ -9,7 +9,7 @@ function App() {
       <Switch>
         <Route path="/home" component={Home} />
         <Route path="/details/:id" component={Details} />
-        <Redirect from="/" to="/home" />
+        <Redirect from="*" to="/home" />
       </Switch>
     </BrowserRouter>
   );

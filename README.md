@@ -15,7 +15,10 @@
 | [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url] |
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
+## Live project at [healthy-foodie.surge.sh](http://healthy-foodie.surge.sh)
+
 - [Healthy Foodie - Recipes App (WIP)](#healthy-foodie---recipes-app-wip)
+  - [Live project at healthy-foodie.surge.sh](#live-project-at-healthy-foodiesurgesh)
   - [The Project](#the-project)
     - [Features](#features)
     - [Built With](#built-with)
@@ -34,9 +37,9 @@
   - [Show your support](#show-your-support)
   - [License](#license)
 
-## The Project
-
 ![app-banner][]
+
+## The Project
 
 As part of Microverse Students, I have to complete some capstone projects, solo projects at the end of the each of the Microverse Main Technical Curriculum sections. This time is for React section.
 
@@ -195,13 +198,17 @@ Feel free to check the [issues page][issues-url].
 - Icons from [![Icons8][icons8-logo]][Icons8] Icons8
 - Banner from [canva.com](https://www.canva.com)
 - Favicon from [favicon.io](https://favicon.io/emoji-favicons/)
+- Production deployment using [surge.sh](https://surge.sh/)
+- custom Bootstrap 4's theme from [https://bootstrap.build](https://bootstrap.build/app), using a modified version of its Sketchy theme
 
 ## License
 
 [![License][badge-apache]][apache-license]
 
 📝 This project is licensed under the [Apache 2](LICENSE)\
-Feel free to fork this project and improve it
+Feel free to fork this project and improve it!
+
+[![HitCount](http://hits.dwyl.com/Israel-Laguan/healthy-foodie.svg)](http://hits.dwyl.com/Israel-Laguan/healthy-foodie)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/Israel-Laguan/healthy-foodie?style=for-the-badge
