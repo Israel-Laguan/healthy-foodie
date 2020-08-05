@@ -10,7 +10,6 @@ import {
   CardTitle,
   CardFooter,
   Badge,
-  Alert,
 } from 'reactstrap';
 
 const styleLinkTo = {
@@ -20,7 +19,7 @@ const styleLinkTo = {
 
 const ListResult = ({ items, onLink }) => (
   <Row>
-    {items.length > 0 ? (
+    {items && items.length > 0 ? (
       items.map(item => (
         <Col md={3} key={`search__recipe-${item.id}`}>
           <Card className="card bg-ligth">
@@ -73,7 +72,7 @@ const ListResult = ({ items, onLink }) => (
         </Col>
       ))
     ) : (
-      <Alert>No recipes found!</Alert>
+      <Col>No recipes found!</Col>
     )}
   </Row>
 );
@@ -83,7 +82,7 @@ ListResult.propTypes = {
     PropTypes.shape({
       id: PropTypes.number,
       image: PropTypes.string,
-      healthScore: PropTypes.string,
+      healthScore: PropTypes.number,
       title: PropTypes.title,
       dishTypes: PropTypes.arrayOf(PropTypes.string),
     }),
@@ -96,7 +95,7 @@ ListResult.defaultProps = {
     {
       id: 1,
       image: '',
-      healthScore: '23',
+      healthScore: 23,
       title: '',
       dishTypes: [''],
     },
