@@ -26,9 +26,9 @@ const ListResult = ({ items, onLink }) => (
           <Card className="card bg-ligth">
             <CardImg
               src={
-                  item.image
-                  || 'https://img.icons8.com/ios/200/000000/mushbooh-food.png'
-                }
+                item.image
+                || 'https://img.icons8.com/ios/200/000000/mushbooh-food.png'
+              }
               top
               width="100%"
               alt={item.title}
@@ -72,23 +72,35 @@ const ListResult = ({ items, onLink }) => (
           </Card>
         </Col>
       ))
-    ) : <Alert>No recipes found!</Alert>}
+    ) : (
+      <Alert>No recipes found!</Alert>
+    )}
   </Row>
 );
 
 ListResult.propTypes = {
-  items: PropTypes.shape({
-    length: PropTypes.number,
-    map: PropTypes.func,
-  }),
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      image: PropTypes.string,
+      healthScore: PropTypes.string,
+      title: PropTypes.title,
+      dishTypes: PropTypes.arrayOf(PropTypes.string),
+    }),
+  ),
   onLink: PropTypes.func,
 };
 
 ListResult.defaultProps = {
-  items: {
-    length: 0,
-    map: () => {},
-  },
+  items: [
+    {
+      id: 1,
+      image: '',
+      healthScore: '23',
+      title: '',
+      dishTypes: [''],
+    },
+  ],
   onLink: () => {},
 };
 

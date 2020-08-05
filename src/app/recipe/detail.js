@@ -89,14 +89,10 @@ Recipe.propTypes = {
     id: PropTypes.string,
     image: PropTypes.string,
     title: PropTypes.string,
-    dishTypes: PropTypes.arrayOf({
-      dishType: PropTypes.string,
-    }),
+    dishTypes: PropTypes.arrayOf(PropTypes.string),
     summary: PropTypes.string,
     spoonacularSourceUrl: PropTypes.string,
-    extendedIngredients: PropTypes.arrayOf({
-      ingredient: PropTypes.string,
-    }),
+    extendedIngredients: PropTypes.arrayOf(PropTypes.string),
   }),
   history: PropTypes.shape({
     push: PropTypes.func,
@@ -108,7 +104,7 @@ Recipe.defaultProps = {
     id: '1',
     image: '',
     title: '',
-    dishTypes: [],
+    dishTypes: [''],
     summary: '',
     spoonacularSourceUrl: '',
     extendedIngredients: [''],

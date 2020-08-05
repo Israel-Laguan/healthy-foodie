@@ -1,2 +1,2 @@
-src/serviceWorker.js
+src/app/serviceWorker.js
 src/setupTests.js
