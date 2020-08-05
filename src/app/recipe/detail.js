@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
+import HtmlToReact from 'html-to-react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import {
@@ -11,6 +12,9 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 
+const { Parser } = HtmlToReact;
+const htmlToReactParser = new Parser();
+
 export function Recipe({ selectedRecipe, history }) {
   const toHome = useCallback(() => {
     history.push('../home');
@@ -22,6 +26,7 @@ export function Recipe({ selectedRecipe, history }) {
     }
   }, [selectedRecipe, toHome]);
 
+  const summary = htmlToReactParser.parse(selectedRecipe.summary);
   return (
     <Jumbotron>
       <Breadcrumb>
@@ -49,7 +54,7 @@ export function Recipe({ selectedRecipe, history }) {
                 </h3>
               ))}
             </Col>
-            <div>{selectedRecipe.summary}</div>
+            <div>{summary}</div>
           </Col>
           <Col md={4}>
             <h2>{selectedRecipe.title}</h2>
