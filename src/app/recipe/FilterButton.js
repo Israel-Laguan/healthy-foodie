@@ -7,7 +7,7 @@ import {
 const FilterButton = ({ items, onClick }) => (
   <Row>
     <Col className="my-2">
-      <ButtonGroup className="w-100">
+      <ButtonGroup className="row mx-0 w-100">
         {items.map(item => (
           <Button
             key={`filter__button-${item.text}`}
