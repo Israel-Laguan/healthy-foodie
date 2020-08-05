@@ -101,22 +101,24 @@ export function Recipe({
         items={fieldByFilterButtons}
         onClick={onClickFilterButton}
       />
-      <ListResult
-        items={searchRecipes.length === 0 ? recipes : searchRecipes}
-        onLink={onLink}
-      />
+      {recipes && (
+        <ListResult
+          items={
+            searchRecipes && searchRecipes.length === 0
+              ? recipes
+              : searchRecipes
+          }
+          onLink={onLink}
+        />
+      )}
     </>
   );
 }
 
 Recipe.propTypes = {
   recipe: PropTypes.string,
-  recipes: PropTypes.arrayOf({
-    item: PropTypes.object,
-  }),
-  searchRecipes: PropTypes.arrayOf({
-    item: PropTypes.object,
-  }),
+  recipes: PropTypes.arrayOf(PropTypes.object),
+  searchRecipes: PropTypes.arrayOf(PropTypes.object),
   setRecipes: PropTypes.func,
   setFilterButtonValue: PropTypes.func,
   setSearchRecipes: PropTypes.func,
@@ -127,9 +129,9 @@ Recipe.propTypes = {
 };
 
 Recipe.defaultProps = {
-  recipe: {},
-  recipes: [{}],
-  searchRecipes: [{}],
+  recipe: '',
+  recipes: [],
+  searchRecipes: [],
   setRecipes: text => text,
   setFilterButtonValue: text => text,
   setSearchRecipes: text => text,
