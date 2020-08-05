@@ -1,4 +1,4 @@
-# Healthy Foodie - Recipes App (WIP)
+# Healthy Foodie - Recipes App
 
 <!-- PROJECT SHIELDS -->
 [![Forks][forks-shield]][forks-url]
@@ -17,7 +17,7 @@
 
 ## Live project at [healthy-foodie.surge.sh](http://healthy-foodie.surge.sh)
 
-- [Healthy Foodie - Recipes App (WIP)](#healthy-foodie---recipes-app-wip)
+- [Healthy Foodie - Recipes App](#healthy-foodie---recipes-app)
   - [Live project at healthy-foodie.surge.sh](#live-project-at-healthy-foodiesurgesh)
   - [The Project](#the-project)
     - [Features](#features)
