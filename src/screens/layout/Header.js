@@ -1,5 +1,6 @@
-import React from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Navbar, NavbarBrand } from 'reactstrap';
 
 const Header = ({ search }) => (
   <Navbar color="primary" dark expand="md">
@@ -13,5 +14,13 @@ const Header = ({ search }) => (
     {search}
   </Navbar>
 );
+
+Header.propTypes = {
+  search: PropTypes.element,
+};
+
+Header.defaultProps = {
+  search: null,
+};
 
 export default Header;

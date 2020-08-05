@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import initialFieldByFilterButtons from "./fieldByFilterButtons";
-import Search from "./Search";
-import FilterButton from "./FilterButton";
-import ListResult from "./ListResult";
-import API from "../api";
-import Header from "../../screens/layout/Header";
+import React, { useState, useEffect, useCallback } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import initialFieldByFilterButtons from './fieldByFilterButtons';
+import Search from './Search';
+import FilterButton from './FilterButton';
+import ListResult from './ListResult';
+import API from '../api';
+import Header from '../../screens/layout/Header';
 import {
   setRecipe,
   setRecipes,
@@ -14,60 +15,73 @@ import {
   setFilterButtonValue,
   setSelectedRecipe,
   getRecipes,
-} from "../../redux/actions";
+} from '../../redux/actions';
 
-export function Recipe({ recipe, recipes, searchRecipes, ...props }) {
+export function Recipe({
+  recipe,
+  recipes,
+  searchRecipes,
+  setRecipes,
+  setFilterButtonValue,
+  setSelectedRecipe,
+  setSearchRecipes,
+  history,
+}) {
   const [fieldByFilterButtons, setFieldByFilterButtons] = useState(
-    initialFieldByFilterButtons
+    initialFieldByFilterButtons,
   );
 
   const getRandomRecipes = useCallback(async () => {
     try {
       const response = await API.getRandomRecipes(10);
-      props.setRecipes(response.data.recipes);
+      setRecipes(response.data.recipes);
+      return 'ok';
     } catch (e) {
-      const error =
-        typeof e === `string` ? e : `Hubo un error inesperado, reintenta.`;
-      console.log(error);
+      const error = typeof e === 'string' ? e : 'Hubo un error inesperado, reintenta.';
+      return error;
     }
-  }, [props]);
+  }, [setRecipes]);
 
-  const onClickFilterButton = (text) => {
-    props.setFilterButtonValue(text);
-
-    setFieldByFilterButtons(
-      fieldByFilterButtons.map((filterButton) => {
-        filterButton.actived = filterButton.text === text;
-
-        return filterButton;
-      })
-    );
-
-    onSearchRecipe(text);
-    props.setRecipe(``);
-  };
-
-  const onChange = (value) => {
-    props.setRecipe(value);
-  };
-
-  const onSearchRecipe = async (value) => {
+  const onSearchRecipe = async value => {
     try {
       const response = await API.getSearchRecipe(value);
-      props.setSearchRecipes(response);
+      setSearchRecipes(response);
     } catch (e) {
-      props.setSearchRecipes([]);
+      setSearchRecipes([]);
     }
+  };
+
+  const onClickFilterButton = text => {
+    setFilterButtonValue(text);
+
+    const newActivatedFilter = fieldByFilterButtons.map(filterButton => {
+      if (filterButton.text === text) {
+        return {
+          ...filterButton,
+          activated: true,
+        };
+      }
+
+      return filterButton;
+    });
+    setFieldByFilterButtons(newActivatedFilter);
+
+    onSearchRecipe(text);
+    setRecipe('');
+  };
+
+  const onChange = value => {
+    setRecipe(value);
   };
 
   const onClick = () => {
     onSearchRecipe(recipe);
-    props.setRecipe(``);
+    setRecipe('');
   };
 
-  const onLink = (recipeData) => {
-    props.setSelectedRecipe(recipeData);
-    props.history.push(`details/${recipeData.id}`);
+  const onLink = recipeData => {
+    setSelectedRecipe(recipeData);
+    history.push(`details/${recipeData.id}`);
   };
 
   useEffect(() => {
@@ -95,7 +109,37 @@ export function Recipe({ recipe, recipes, searchRecipes, ...props }) {
   );
 }
 
-const mapStateToProps = (state) => ({
+Recipe.propTypes = {
+  recipe: PropTypes.string,
+  recipes: PropTypes.arrayOf({
+    item: PropTypes.object,
+  }),
+  searchRecipes: PropTypes.arrayOf({
+    item: PropTypes.object,
+  }),
+  setRecipes: PropTypes.func,
+  setFilterButtonValue: PropTypes.func,
+  setSearchRecipes: PropTypes.func,
+  setSelectedRecipe: PropTypes.func,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+};
+
+Recipe.defaultProps = {
+  recipe: {},
+  recipes: [{}],
+  searchRecipes: [{}],
+  setRecipes: text => text,
+  setFilterButtonValue: text => text,
+  setSearchRecipes: text => text,
+  setSelectedRecipe: text => text,
+  history: {
+    push: text => text,
+  },
+};
+
+const mapStateToProps = state => ({
   recipe: state.recipe,
   recipes: state.recipes,
   searchRecipes: state.searchRecipes,

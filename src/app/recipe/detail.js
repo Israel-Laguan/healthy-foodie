@@ -1,6 +1,6 @@
-import React, { useEffect, useCallback } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import React, { useEffect, useCallback } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import {
   Row,
   Col,
@@ -8,12 +8,13 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Jumbotron,
-} from "reactstrap";
+} from 'reactstrap';
+import PropTypes from 'prop-types';
 
-export function Recipe({ selectedRecipe, ...props }) {
+export function Recipe({ selectedRecipe, history }) {
   const toHome = useCallback(() => {
-    props.history.push(`../home`);
-  }, [props.history]);
+    history.push('../home');
+  }, [history]);
 
   useEffect(() => {
     if (!selectedRecipe.id) {
@@ -21,12 +22,11 @@ export function Recipe({ selectedRecipe, ...props }) {
     }
   }, [selectedRecipe, toHome]);
 
-  console.log(selectedRecipe);
   return (
     <Jumbotron>
       <Breadcrumb>
         <BreadcrumbItem>
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
         </BreadcrumbItem>
         <BreadcrumbItem active>Details</BreadcrumbItem>
       </Breadcrumb>
@@ -39,7 +39,7 @@ export function Recipe({ selectedRecipe, ...props }) {
               width="100%"
             />
             <Col md={12}>
-              {selectedRecipe.dishTypes.map((dishType) => (
+              {selectedRecipe.dishTypes.map(dishType => (
                 <h3
                   key={`detail_card__footer-${selectedRecipe.id}-${dishType}`}
                 >
@@ -49,24 +49,22 @@ export function Recipe({ selectedRecipe, ...props }) {
                 </h3>
               ))}
             </Col>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: selectedRecipe.summary,
-              }}
-            ></div>
+            <div>{selectedRecipe.summary}</div>
           </Col>
           <Col md={4}>
             <h2>{selectedRecipe.title}</h2>
             <h3>Ingredients:</h3>
             <ul className="list-group">
-              {selectedRecipe.extendedIngredients.map((ingredient, id) => (
+              {selectedRecipe.extendedIngredients.map(ingredient => (
                 <li
                   className="list-group-item d-flex justify-content-between align-items-center"
-                  key={`ingredient-${ingredient.name}-${id}`}
+                  key={`ingredient-${ingredient.name}`}
                 >
                   {ingredient.name}
                   <span className="badge badge-info badge-pill">
-                    {ingredient.amount} {ingredient.unit}
+                    {ingredient.amount}
+                    {' '}
+                    {ingredient.unit}
                   </span>
                 </li>
               ))}
@@ -86,7 +84,41 @@ export function Recipe({ selectedRecipe, ...props }) {
   );
 }
 
-const mapStateToProps = (state) => ({
+Recipe.propTypes = {
+  selectedRecipe: PropTypes.shape({
+    id: PropTypes.string,
+    image: PropTypes.string,
+    title: PropTypes.string,
+    dishTypes: PropTypes.arrayOf({
+      dishType: PropTypes.string,
+    }),
+    summary: PropTypes.string,
+    spoonacularSourceUrl: PropTypes.string,
+    extendedIngredients: PropTypes.arrayOf({
+      ingredient: PropTypes.string,
+    }),
+  }),
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+};
+
+Recipe.defaultProps = {
+  selectedRecipe: {
+    id: '1',
+    image: '',
+    title: '',
+    dishTypes: [],
+    summary: '',
+    spoonacularSourceUrl: '',
+    extendedIngredients: [''],
+  },
+  history: {
+    push: a => a,
+  },
+};
+
+const mapStateToProps = state => ({
   selectedRecipe: state.selectedRecipe,
 });
 

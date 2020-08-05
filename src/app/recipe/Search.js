@@ -1,5 +1,8 @@
-import React from "react";
-import { Button, FormGroup, Input, Form } from "reactstrap";
+import PropTypes from 'prop-types';
+import React from 'react';
+import {
+  Button, FormGroup, Input, Form,
+} from 'reactstrap';
 
 function Search({ recipe, onChange, onClick }) {
   return (
@@ -10,7 +13,7 @@ function Search({ recipe, onChange, onClick }) {
           type="text"
           value={recipe}
           placeholder="Search a Recipe"
-          onChange={(e) => onChange(e.target.value)}
+          onChange={e => onChange(e.target.value)}
         />
         <Button onClick={onClick} className="d-flex p-0">
           <img
@@ -22,5 +25,17 @@ function Search({ recipe, onChange, onClick }) {
     </Form>
   );
 }
+
+Search.propTypes = {
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+  recipe: PropTypes.string,
+};
+
+Search.defaultProps = {
+  onChange: () => {},
+  onClick: () => {},
+  recipe: '',
+};
 
 export default Search;

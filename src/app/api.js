@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const apiKey = process.env.REACT_APP_API_KEY || ``;
+const apiKey = process.env.REACT_APP_API_KEY || '';
 const parameterApiKey = `?apiKey=${apiKey}&`;
 
 const API = {};
 
-const baseURL = process.env.REACT_APP_API_URL || `https://api.spoonacular.com/recipes/`;
+const baseURL = process.env.REACT_APP_API_URL || 'https://api.spoonacular.com/recipes/';
 
 const axiosInstance = axios.create({
   baseURL,
@@ -15,36 +15,34 @@ const axiosInstance = axios.create({
 });
 
 // Endpoint
-const axiosRun = (endpoint, parameters) => {
-  return axiosInstance.get(`${endpoint}${parameterApiKey}${parameters}`);
-}
+const axiosRun = (endpoint, parameters) => axiosInstance.get(`${endpoint}${parameterApiKey}${parameters}`);
 // Recetas
-API.getRandomRecipes = limit => axiosRun(`random`, `number=${limit}&addRecipeInformation=true&fillIngredients=true`);
+API.getRandomRecipes = limit => axiosRun('random', `number=${limit}&addRecipeInformation=true&fillIngredients=true`);
 API.getRecipes = ({ query, limit, filter }) => axiosRun(
-  `complexSearch`,
-  `query=${query}&number=${limit}${filter}&addRecipeInformation=true&fillIngredients=true`
+  'complexSearch',
+  `query=${query}&number=${limit}${filter}&addRecipeInformation=true&fillIngredients=true`,
 );
 API.getSearchRecipe = async recipe => {
-  const filterButtonValue = (recipe || `All`).toLocaleLowerCase();
-  let filter = ``;
+  const filterButtonValue = (recipe || 'All').toLocaleLowerCase();
+  let filter = '';
 
   switch (filterButtonValue) {
-    case `vegan`:
+    case 'vegan':
       filter = `&diet=${filterButtonValue}`;
-    break
-    case `italian`:
-    case `chinese`:
-    case `french`:
+      break;
+    case 'italian':
+    case 'chinese':
+    case 'french':
       filter = `&cuisine=${filterButtonValue}`;
-    break
-    case `main course`:
-    case `dessert`:
-    case `salad`:
+      break;
+    case 'main course':
+    case 'dessert':
+    case 'salad':
       filter = `&type=${filterButtonValue}`;
-    break
+      break;
     default:
-      filter = ``;
-    break
+      filter = '';
+      break;
   }
 
   const response = await API.getRecipes({
@@ -54,6 +52,6 @@ API.getSearchRecipe = async recipe => {
   });
 
   return response.data.results;
-}
+};
 
-export default API
+export default API;

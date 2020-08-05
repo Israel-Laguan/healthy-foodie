@@ -6,10 +6,10 @@ import setSelectedRecipe from './setSelectedRecipe';
 import getRecipes from './getRecipes';
 
 export {
- setRecipe,
- setRecipes,
- setSearchRecipes,
- setFilterButtonValue,
- setSelectedRecipe,
- getRecipes,
+  setRecipe,
+  setRecipes,
+  setSearchRecipes,
+  setFilterButtonValue,
+  setSelectedRecipe,
+  getRecipes,
 };
