@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/app/recipe:details redirect to home when no filters provided 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="my-2 col"
+  >
+    <div
+      className="w-100 btn-group"
+      role="group"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Icon undefined"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`src/app/recipe:details render buttons when filters provided 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="my-2 col"
+  >
+    <div
+      className="w-100 btn-group"
+      role="group"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Icon Vegan"
+          src="https://img.icons8.com/doodle/48/000000/no-meat.png"
+        />
+        Vegan
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Icon Italian"
+          src="https://img.icons8.com/doodle/48/000000/italy.png"
+        />
+        Italian
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Icon Chinese"
+          src="https://img.icons8.com/doodle/48/000000/china.png"
+        />
+        Chinese
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Icon French"
+          src="https://img.icons8.com/doodle/48/000000/france.png"
+        />
+        French
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Icon Main Course"
+          src="https://img.icons8.com/doodle/48/000000/tableware.png"
+        />
+        Main Course
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Icon Dessert"
+          src="https://img.icons8.com/doodle/48/000000/cupcake--v1.png"
+        />
+        Dessert
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Icon Salad"
+          src="https://img.icons8.com/doodle/48/000000/lettuce--v1.png"
+        />
+        Salad
+      </button>
+      <button
+        aria-label={null}
+        className="btn btn-primary active"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="Icon All"
+          src="https://img.icons8.com/doodle/48/000000/dining-room.png"
+        />
+        All
+      </button>
+    </div>
+  </div>
+</div>
+`;

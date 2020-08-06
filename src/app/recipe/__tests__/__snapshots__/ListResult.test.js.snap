@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/app/recipe:details redirect to home when no filters provided 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col-md-3"
+  >
+    <div
+      className="card bg-ligth card"
+    >
+      <img
+        alt=""
+        className="card-img-top"
+        onClick={[Function]}
+        src="https://img.icons8.com/ios/200/000000/mushbooh-food.png"
+        style={
+          Object {
+            "color": "white",
+            "cursor": "pointer",
+          }
+        }
+        width="100%"
+      />
+      <div
+        className="card-img-overlay card-body"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "white",
+            "cursor": "pointer",
+          }
+        }
+      >
+        <div
+          className="card-title"
+          style={
+            Object {
+              "backgroundColor": "rgba(0,0,0,50%)",
+            }
+          }
+        >
+          Health Score:
+           
+          <span
+            className="badge badge-secondary"
+          >
+            23
+            %
+          </span>
+        </div>
+      </div>
+      <div
+        className="card-footer"
+      >
+        <button
+          aria-label={null}
+          className="text-dark btn btn-link btn-lg btn-block"
+          onClick={[Function]}
+          type="button"
+        >
+          
+        </button>
+        <span
+          className="badge badge-success badge-pill"
+        >
+          
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`src/app/recipe:details render buttons when filters provided 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col-md-3"
+  >
+    <div
+      className="card bg-ligth card"
+    >
+      <img
+        alt=""
+        className="card-img-top"
+        onClick={[Function]}
+        src="https://img.icons8.com/ios/200/000000/mushbooh-food.png"
+        style={
+          Object {
+            "color": "white",
+            "cursor": "pointer",
+          }
+        }
+        width="100%"
+      />
+      <div
+        className="card-img-overlay card-body"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "white",
+            "cursor": "pointer",
+          }
+        }
+      >
+        <div
+          className="card-title"
+          style={
+            Object {
+              "backgroundColor": "rgba(0,0,0,50%)",
+            }
+          }
+        >
+          Health Score:
+           
+          <span
+            className="badge badge-secondary"
+          >
+            23
+            %
+          </span>
+        </div>
+      </div>
+      <div
+        className="card-footer"
+      >
+        <button
+          aria-label={null}
+          className="text-dark btn btn-link btn-lg btn-block"
+          onClick={[Function]}
+          type="button"
+        >
+          
+        </button>
+        <span
+          className="badge badge-success badge-pill"
+        >
+          
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
