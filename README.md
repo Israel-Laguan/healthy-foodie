@@ -3,8 +3,8 @@
 <!-- PROJECT SHIELDS -->
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
-[![Issues-open][issues-open-shield]][issues-url]
-[![Issues-closed][issues-closed-shield]][issues-url]
+[![Issues-open][issues-open-shield]](https://github.com/Israel-Laguan/healthy-foodie/issues?q=is%3Aopen+is%3Aissue)
+[![Issues-closed][issues-closed-shield]](https://github.com/Israel-Laguan/healthy-foodie/issues?q=is%3Aissue+is%3Aclosed)
 [![Contributors][contributors-shield]][contributors-url]
 
 <!-- PROJECT LOGO -->
