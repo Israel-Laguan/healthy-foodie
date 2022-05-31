@@ -1,6 +1,7 @@
 # Healthy Foodie - Recipes App
 
 <!-- PROJECT SHIELDS -->
+
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues-open][issues-open-shield]][issues-url]
@@ -8,12 +9,13 @@
 [![Contributors][contributors-shield]][contributors-url]
 
 <!-- PROJECT LOGO -->
-| Healthy Foodie |
-| :---: |
-| ![app-icon][] |
+
+|                                                                    Healthy Foodie                                                                    |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                    ![app-icon][]                                                                     |
 | Recipes App ~ Get a list of recipes, filter or query as you like, and check the recipe! ~ Consuming an API with React and managinf state with Redux. |
-| [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url] |
-| [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
+|                                                [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]                                                 |
+|                       [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license]                       |
 
 ## Live project at [healthy-foodie.surge.sh](http://healthy-foodie.surge.sh)
 
@@ -47,10 +49,10 @@ This project is based in a catalogue of dogs [Catalogue of Dog Clothes](https://
 
 ### Features
 
-![javascript][]
-![react][]
+[![][javascript]][javascript-url]
+[![][react]][react-url]
 [![Framework][badge-framework]][framework-url]
-![bootstrap][]
+[![][bootstrap]][bootstrap-url]
 
 - Basic `create-react-app` structure
 - Sets `stylelint` on the repo
@@ -177,8 +179,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Author
 
 | [Israel Laguan][author-github] | ![email-icon][] Email me to [contact@israellaguan.com][author-email] / ![linkedin-icon][] Connect to [my Linkedin][author-linkedin] |
-|:---:|:---:|
-| ![author-pic][] | ![banner][] |
+| :----------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+|        ![author-pic][]         |                                                             ![banner][]                                                             |
 
 ## Contributing
 
@@ -192,10 +194,10 @@ Feel free to check the [issues page][issues-url].
 🤗 Give a ⭐️ if you like this project!
 
 - API: Powered by [Spoonacular's Food API](https://spoonacular.com/food-api)
-  
+
   ![spoonacular][api-logo]
 
-- Icons from [![Icons8][icons8-logo]][Icons8] Icons8
+- Icons from [![Icons8][icons8-logo]][icons8] Icons8
 - Banner from [canva.com](https://www.canva.com)
 - Favicon from [favicon.io](https://favicon.io/emoji-favicons/)
 - Production deployment using [surge.sh](https://surge.sh/)
@@ -211,6 +213,7 @@ Feel free to fork this project and improve it!
 [![HitCount](http://hits.dwyl.com/Israel-Laguan/healthy-foodie.svg)](http://hits.dwyl.com/Israel-Laguan/healthy-foodie)
 
 <!-- MARKDOWN LINKS & IMAGES -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/Israel-Laguan/healthy-foodie?style=for-the-badge
 [contributors-url]: https://github.com/Israel-Laguan/healthy-foodie/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Israel-Laguan/healthy-foodie?style=for-the-badge
@@ -220,7 +223,6 @@ Feel free to fork this project and improve it!
 [issues-open-shield]: https://img.shields.io/github/issues/Israel-Laguan/healthy-foodie?style=for-the-badge
 [issues-closed-shield]: https://img.shields.io/github/issues-closed/Israel-Laguan/healthy-foodie?style=for-the-badge
 [badge-framework]: https://img.shields.io/badge/store-Redux-000?style=for-the-badge&logo=redux
-[framework-url]: https://redux.js.org/
 [react]: https://img.shields.io/badge/React-16+-61DAFB?style=for-the-badge&logo=react
 [javascript]: https://img.shields.io/badge/JAVASCRIPT-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript
 [css]: https://img.shields.io/badge/style-CSS-1572B6?style=for-the-badge&logo=css3
@@ -238,6 +240,14 @@ Feel free to fork this project and improve it!
 [banner]: https://github.com/Israel-Laguan/Israel-Laguan/raw/master/docs/banner.jpg
 [app-banner]: docs/app-banner.png
 [app-icon]: https://img.icons8.com/doodle/48/000000/cooking-book.png
-[Icons8]: https://icons8.com/
+[icons8]: https://icons8.com/
 [icons8-logo]: https://img.icons8.com/fluent/20/000000/icons8-new-logo.png
 [api-logo]: https://spoonacular.com/images/spoonacular-logo-b.svg
+
+<!-- URL -->
+
+[react-url]: https://reactjs.org/
+[css-url]: https://www.w3schools.com/css/
+[javascript-url]: https://devdocs.io/javascript/
+[framework-url]: https://redux.js.org/
+[bootstrap-url]: https://getbootstrap.com/docs/4.1/getting-started/introduction/
