@@ -4,8 +4,8 @@
 
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
-[![Issues-open][issues-open-shield]][issues-url]
-[![Issues-closed][issues-closed-shield]][issues-url]
+[![Issues-open][issues-open-shield]][issues-open-url]
+[![Issues-closed][issues-closed-shield]][issues-closed-url]
 [![Contributors][contributors-shield]][contributors-url]
 
 <!-- PROJECT LOGO -->
@@ -229,6 +229,8 @@ Feel free to fork this project and improve it!
 [bootstrap]: https://img.shields.io/badge/style-Bootstrap4-563D7C?style=for-the-badge&logo=bootstrap
 [contributions-welcome]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=for-the-badge
 [issues-url]: https://github.com/Israel-Laguan/healthy-foodie/issues
+[issues-open-url]: https://github.com/Israel-Laguan/healthy-foodie/issues?q=is%3Aissue+is%3Aopen
+[issues-closed-url]: https://github.com/Israel-Laguan/healthy-foodie/issues?q=is%3Aissue+is%3Aclosed
 [badge-apache]: https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge
 [apache-license]: https://opensource.org/licenses/Apache-2.0
 [author-pic]: https://avatars2.githubusercontent.com/u/36519478?s=460&v=4
